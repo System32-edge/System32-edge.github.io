@@ -110,19 +110,20 @@
         }
 
         function processPayment() {
+            // 提示用户付款成功
             alert(`付款成功！感谢您的购买。`);
 
             // 清空订单数量并标记已下单
             Cookies.set('ordered', 'true', { expires: 365 });
             Cookies.set('orderCount', '0', { expires: 365 });
 
-            // 重定向到外部网页
+            // 用户点击弹窗上的确定后执行重定向
             redirectToExternalPage();
         }
 
-        // 新增的函数，用于直接重定向到指定网页
+        // 新增的函数，用于直接重定向到另一个网页
         function redirectToExternalPage() {
-            window.location.href = "https://system32-edge.github.io/kzt";
+            window.location.href = "https://system32-edge.github.io";
         }
     </script>
 </body>
