@@ -73,9 +73,8 @@
         // 页面加载时检查用户是否已经下单
         document.addEventListener('DOMContentLoaded', function() {
             if (Cookies.get('ordered') === 'true') {
-                disableOrderButtons();
-            } else {
-                enableOrderButtons();
+                disableOrderButtonsExceptCancel();
+                alert('您已订购产品，无法再次订购该产品。');
             }
         });
 
@@ -117,19 +116,15 @@
             Cookies.set('ordered', 'true', { expires: 365 });
             Cookies.set('orderCount', '0', { expires: 365 });
 
-            // 付款成功后刷新页面
-            location.reload();
+            // 重定向到外部网页
+            redirectToExternalPage();
         }
 
-        function disableOrderButtons() {
+        function disableOrderButtonsExceptCancel() {
             document.querySelectorAll('button').forEach(button => {
-                button.disabled = true;
-            });
-        }
-
-        function enableOrderButtons() {
-            document.querySelectorAll('button').forEach(button => {
-                button.disabled = false;
+                if (button.id !== 'cancelPaymentButton') {
+                    button.disabled = true;
+                }
             });
         }
 
@@ -140,4 +135,5 @@
     </script>
 </body>
 </html>
+
 
