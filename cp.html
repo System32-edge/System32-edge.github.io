@@ -52,7 +52,7 @@
     <div class="container" id="orderContainer">
         <h1>笔记云湖南公益机</h1>
         <p>产品描述: 高性能笔记云，支持湖南公益事业。</p>
-        <p>价格: $99.99</p>
+        <p>价格: $0.00</p>
         <p>您已订购: <span id="orderCount">0</span> 个</p>
         <button onclick="addToCart()">加入购物车</button>
         <button onclick="goToCheckout()">去结账</button>
@@ -103,7 +103,7 @@
 
             // Update checkout page with order details
             document.getElementById('checkoutCount').textContent = currentCount;
-            document.getElementById('checkoutTotal').textContent = (currentCount * 99.99).toFixed(2);
+            document.getElementById('checkoutTotal').textContent = (currentCount * 0.00).toFixed(2);
         }
 
         function processPayment() {
