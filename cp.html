@@ -58,7 +58,7 @@
         <button onclick="goToCheckout()">去结账</button>
         
         <!-- 修改的按钮，直接重定向到另一个网页 -->
-        <button onclick="redirectToExternalPage()">取消付款</button>
+        <button id="cancelPaymentButton" onclick="redirectToExternalPage()">取消付款</button>
     </div>
 
     <div class="container" id="checkoutContainer" style="display: none;">
@@ -73,8 +73,8 @@
         // 页面加载时检查用户是否已经下单
         document.addEventListener('DOMContentLoaded', function() {
             if (Cookies.get('ordered') === 'true') {
-                disableOrderButtonsExceptCancel();
                 alert('您已订购产品，无法再次订购该产品。');
+                redirectToExternalPage();
             }
         });
 
@@ -118,14 +118,6 @@
 
             // 重定向到外部网页
             redirectToExternalPage();
-        }
-
-        function disableOrderButtonsExceptCancel() {
-            document.querySelectorAll('button').forEach(button => {
-                if (button.id !== 'cancelPaymentButton') {
-                    button.disabled = true;
-                }
-            });
         }
 
         // 新增的函数，用于直接重定向到另一个网页
