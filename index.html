@@ -103,50 +103,38 @@
     </div>
 
     <script>
-        if (document.referrer === "https://system32-edge.github.io/cp") {
-            document.cookie = "redirectedFromCP=true; max-age=" + 60 * 60 * 24;
+       // 创建新的按钮元素
+var orderButton = document.createElement("a");
+orderButton.classList.add("btn");
+orderButton.href = "https://system32-edge.github.io/cp";
+orderButton.textContent = "订购产品"; // 按钮名称为订购产品
+orderButton.style.backgroundColor = "#007bff"; // 蓝色背景
+orderButton.style.color = "#ffffff"; // 白色文字
+orderButton.style.border = "2px solid #007bff"; // 蓝色边框
+orderButton.style.marginTop = "10px";
+orderButton.style.display = "inline-block";
+orderButton.style.padding = "10px 20px";
+orderButton.style.textDecoration = "none";
+orderButton.style.borderRadius = "5px";
+orderButton.style.transition = "background-color 0.3s, color 0.3s, border-color 0.3s"; // 添加border-color的过渡效果
 
-            var newButton = document.createElement("a");
-            newButton.classList.add("btn");
-            newButton.href = "https://system32-edge.github.io/cp";
-            newButton.textContent = "订购产品";
-            newButton.style.backgroundColor = "#007bff";
-            newButton.style.color = "#ffffff";
-            newButton.style.border = "2px solid #007bff";
-            newButton.style.marginTop = "10px";
-            newButton.style.display = "inline-block";
-            newButton.style.padding = "10px 20px";
-            newButton.style.textDecoration = "none";
-            newButton.style.borderRadius = "5px";
-            newButton.style.transition = "background-color 0.3s, color 0.3s";
+// hover时的样式
+orderButton.addEventListener("mouseover", function() {
+    orderButton.style.backgroundColor = "#ffffff"; // 白色背景
+    orderButton.style.color = "#007bff"; // 蓝色文字
+    orderButton.style.borderColor = "#007bff"; // 蓝色边框
+});
 
-            var redirectSection = document.getElementById("redirectSection");
-            redirectSection.appendChild(newButton);
-        }
-    </script>
-    <script>
-    // 现有的 JavaScript 代码...
-
-    // 新增的代码开始
-    // 创建新的按钮元素
-    var orderButton = document.createElement("a");
-    orderButton.classList.add("btn");
-    orderButton.href = "https://system32-edge.github.io/cp";
-    orderButton.textContent = "订购产品"; // 按钮名称为订购产品
+// 鼠标离开时恢复原始样式
+orderButton.addEventListener("mouseout", function() {
     orderButton.style.backgroundColor = "#007bff"; // 蓝色背景
     orderButton.style.color = "#ffffff"; // 白色文字
-    orderButton.style.border = "2px solid #007bff"; // 蓝色边框
-    orderButton.style.marginTop = "10px";
-    orderButton.style.display = "inline-block";
-    orderButton.style.padding = "10px 20px";
-    orderButton.style.textDecoration = "none";
-    orderButton.style.borderRadius = "5px";
-    orderButton.style.transition = "background-color 0.3s, color 0.3s";
+    orderButton.style.borderColor = "#007bff"; // 蓝色边框
+});
 
-    // 将按钮添加到页面上
-    var redirectSection = document.getElementById("redirectSection");
-    redirectSection.appendChild(orderButton);
-    // 新增的代码结束
-</script>
+// 将按钮添加到页面上
+var redirectSection = document.getElementById("redirectSection");
+redirectSection.appendChild(orderButton);
+    </script>
 </body>
 </html>
