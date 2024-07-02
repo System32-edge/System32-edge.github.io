@@ -66,6 +66,8 @@
         <p>您已选择购买 <span id="checkoutCount">0</span> 个产品"湖南公益机"。</p>
         <p>总价格为 $<span id="checkoutTotal">0.00</span></p>
         <button onclick="processPayment()">付款</button>
+        <!-- 新增的超链接按钮 -->
+        <a href="https://system32-edge.github.io/kzt" class="external-link" id="consoleLink" style="display: none;">控制台</a>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/3.0.1/js.cookie.min.js"></script>
@@ -116,6 +118,9 @@
             // 清空订单数量并标记已下单
             Cookies.set('ordered', 'true', { expires: 365 });
             Cookies.set('orderCount', '0', { expires: 365 });
+
+            // 显示控制台链接按钮
+            document.getElementById('consoleLink').style.display = 'inline-block';
 
             // 用户点击弹窗上的确定后执行重定向
             redirectToExternalPage();
