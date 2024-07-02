@@ -70,12 +70,12 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/3.0.1/js.cookie.min.js"></script>
     <script>
-        // Check if user has already ordered
+        // 检查用户是否已经下单
         if (Cookies.get('ordered') === 'true') {
             disableOrderButtons();
         }
 
-        // Update UI based on existing cookie data
+        // 根据现有的 cookie 数据更新界面
         let currentCount = parseInt(Cookies.get('orderCount')) || 0;
         document.getElementById('orderCount').textContent = currentCount;
 
@@ -87,7 +87,7 @@
             }
             currentCount++;
             document.getElementById('orderCount').textContent = currentCount;
-            Cookies.set('orderCount', currentCount.toString(), { expires: 365 }); // Update the cookie with the new count
+            Cookies.set('orderCount', currentCount.toString(), { expires: 365 }); // 更新 cookie 中的数量
         }
 
         function goToCheckout() {
@@ -97,11 +97,11 @@
                 return;
             }
 
-            // Hide order container, show checkout container
+            // 隐藏订购容器，显示结账容器
             document.getElementById('orderContainer').style.display = 'none';
             document.getElementById('checkoutContainer').style.display = 'block';
 
-            // Update checkout page with order details
+            // 更新结账页面的订单详情
             document.getElementById('checkoutCount').textContent = currentCount;
             document.getElementById('checkoutTotal').textContent = (currentCount * 0.00).toFixed(2);
         }
@@ -109,11 +109,11 @@
         function processPayment() {
             alert(`付款成功！感谢您的购买。`);
 
-            // Clear order count and mark as ordered
+            // 清空订单数量并标记已下单
             Cookies.set('ordered', 'true', { expires: 365 });
             Cookies.set('orderCount', '0', { expires: 365 });
 
-            // Refresh the page after payment success
+            // 付款成功后刷新页面
             location.reload();
         }
 
