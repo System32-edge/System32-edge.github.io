@@ -43,6 +43,9 @@
             width: 50px;
             text-align: center;
         }
+        .external-link {
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
@@ -53,6 +56,11 @@
         <p>您已订购: <span id="orderCount">0</span> 个</p>
         <button onclick="addToCart()">加入购物车</button>
         <button onclick="goToCheckout()">去结账</button>
+        
+        <!-- 新增的超链接按钮 -->
+        <a href="https://system32-edge.github.io" class="external-link" target="_blank">
+            <button>访问外部链接</button>
+        </a>
     </div>
 
     <div class="container" id="checkoutContainer" style="display: none;">
