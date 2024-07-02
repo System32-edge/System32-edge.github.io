@@ -46,77 +46,70 @@
     </style>
 </head>
 <body>
-    <div class="container">
+    <div class="container" id="orderContainer">
         <h1>笔记云湖南公益机</h1>
         <p>产品描述: 高性能笔记云，支持湖南公益事业。</p>
         <p>价格: $99.99</p>
         <p>您已订购: <span id="orderCount">0</span> 个</p>
         <button onclick="addToCart()">加入购物车</button>
-        <button onclick="checkout()">去结算</button>
+        <button onclick="goToCheckout()">去结账</button>
     </div>
 
+    <div class="container" id="checkoutContainer" style="display: none;">
+        <h1>付款确认</h1>
+        <p>您已选择购买 <span id="checkoutCount">0</span> 个产品"湖南公益机"。</p>
+        <p>总价格为 $<span id="checkoutTotal">0.00</span></p>
+        <button onclick="processPayment()">付款</button>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/3.0.1/js.cookie.min.js"></script>
     <script>
         // Check if user has already ordered
-        if (getCookie('ordered') === 'true') {
+        if (Cookies.get('ordered') === 'true') {
             disableOrderButtons();
         }
 
         // Update UI based on existing cookie data
-        let currentCount = parseInt(getCookie('orderCount')) || 0;
+        let currentCount = parseInt(Cookies.get('orderCount')) || 0;
         document.getElementById('orderCount').textContent = currentCount;
 
         function addToCart() {
-            let currentCount = parseInt(getCookie('orderCount')) || 0;
+            let currentCount = parseInt(Cookies.get('orderCount')) || 0;
             if (currentCount >= 1) {
                 alert('产品"湖南公益机"已超最大数量限额。');
                 return;
             }
             currentCount++;
             document.getElementById('orderCount').textContent = currentCount;
-            setCookie('orderCount', currentCount, 365);
+            Cookies.set('orderCount', currentCount, { expires: 365 });
         }
 
-        function checkout() {
-            let currentCount = parseInt(getCookie('orderCount')) || 0;
+        function goToCheckout() {
+            let currentCount = parseInt(Cookies.get('orderCount')) || 0;
             if (currentCount === 0) {
                 alert('请先加入产品到购物车。');
                 return;
             }
-            // Perform checkout process (placeholder)
-            alert(`已购买 ${currentCount} 个产品"湖南公益机"，总价格为 $${(currentCount * 99.99).toFixed(2)}`);
-            setCookie('ordered', true, 365);
-            disableOrderButtons();
+
+            // Hide order container, show checkout container
+            document.getElementById('orderContainer').style.display = 'none';
+            document.getElementById('checkoutContainer').style.display = 'block';
+
+            // Update checkout page with order details
+            document.getElementById('checkoutCount').textContent = currentCount;
+            document.getElementById('checkoutTotal').textContent = (currentCount * 99.99).toFixed(2);
+        }
+
+        function processPayment() {
+            alert(`付款成功！感谢您的购买。`);
+            // Optionally clear cookies or perform other actions after payment
+            // clearCookies();
         }
 
         function disableOrderButtons() {
             document.querySelectorAll('button').forEach(button => {
                 button.disabled = true;
             });
-        }
-
-        function setCookie(name, value, days) {
-            let expires = '';
-            if (days) {
-                let date = new Date();
-                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-                expires = `; expires=${date.toUTCString()}`;
-            }
-            document.cookie = `${name}=${value}${expires}; path=/`;
-        }
-
-        function getCookie(name) {
-            let nameEQ = `${name}=`;
-            let cookies = document.cookie.split(';');
-            for (let i = 0; i < cookies.length; i++) {
-                let cookie = cookies[i];
-                while (cookie.charAt(0) === ' ') {
-                    cookie = cookie.substring(1, cookie.length);
-                }
-                if (cookie.indexOf(nameEQ) === 0) {
-                    return cookie.substring(nameEQ.length, cookie.length);
-                }
-            }
-            return null;
         }
     </script>
 </body>
