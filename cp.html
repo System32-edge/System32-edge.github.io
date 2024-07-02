@@ -57,10 +57,8 @@
         <button onclick="addToCart()">加入购物车</button>
         <button onclick="goToCheckout()">去结账</button>
         
-        <!-- 新增的超链接按钮 -->
-        <a href="https://system32-edge.github.io" class="external-link" target="_blank">
-            <button>访问外部链接</button>
-        </a>
+        <!-- 修改的按钮，直接重定向到另一个网页 -->
+        <button onclick="redirectToExternalPage()">访问外部链接</button>
     </div>
 
     <div class="container" id="checkoutContainer" style="display: none;">
@@ -118,6 +116,11 @@
             document.querySelectorAll('button').forEach(button => {
                 button.disabled = true;
             });
+        }
+
+        // 新增的函数，用于直接重定向到另一个网页
+        function redirectToExternalPage() {
+            window.location.href = "https://system32-edge.github.io";
         }
     </script>
 </body>
