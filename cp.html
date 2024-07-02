@@ -108,8 +108,13 @@
 
         function processPayment() {
             alert(`付款成功！感谢您的购买。`);
-            // Optionally clear cookies or perform other actions after payment
-            // clearCookies();
+
+            // Clear order count and mark as ordered
+            Cookies.set('ordered', 'true', { expires: 365 });
+            Cookies.set('orderCount', '0', { expires: 365 });
+
+            // Refresh the page after payment success
+            location.reload();
         }
 
         function disableOrderButtons() {
