@@ -73,7 +73,7 @@
         // 页面加载时检查用户是否已经下单
         document.addEventListener('DOMContentLoaded', function() {
             if (Cookies.get('ordered') === 'true') {
-                alert('您已订购产品，无法再次订购该产品。');
+                alert('您已订购该产品，无法再次订购该产品。');
                 redirectToExternalPage();
             }
         });
