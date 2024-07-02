@@ -3,101 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>个人主页</title>
+    <title>笔记云计算</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f0f5f9;
-            color: #37474f;
+            background-color: #007bff;
+            color: #fff;
             margin: 0;
-            padding: 0;
+            padding: 20px;
+            overflow-y: scroll; /* 允许页面内容超出视窗时使用滚动条 */
         }
         .container {
             max-width: 800px;
-            margin: 20px auto;
-            background-color: #ffffff;
+            margin: 0 auto;
+            background-color: #fff;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             padding: 20px;
             border-radius: 8px;
         }
-        header {
-            background-color: #2196f3;
-            color: #ffffff;
-            padding: 20px;
+        h1 {
             text-align: center;
-            border-radius: 8px 8px 0 0;
+            color: #007bff;
         }
-        .profile {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-top: 20px;
-            padding: 20px;
-            border-top: 1px solid #e0e0e0;
+        h2 {
+            color: #007bff;
         }
-        .profile img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 4px solid #ffffff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        .profile .info {
-            flex: 1;
-            margin-left: 20px;
-        }
-        .profile h1 {
-            font-size: 32px;
-            margin-bottom: 10px;
-        }
-        .profile p {
-            font-size: 18px;
+        p {
             line-height: 1.6;
         }
-        .social-links {
-            text-align: center;
+        .company-info {
             margin-top: 20px;
         }
-        .social-links a {
-            color: #2196f3;
-            text-decoration: none;
-            font-size: 24px;
-            margin: 0 10px;
-        }
-        footer {
-            text-align: center;
+        .contact-info {
             margin-top: 20px;
-            padding: 10px;
-            background-color: #2196f3;
-            color: #ffffff;
-            border-radius: 0 0 8px 8px;
+        }
+        .contact-info p {
+            margin-bottom: 10px;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>个人主页</h1>
-            <p>欢迎来到我的个人主页</p>
+            <h1>笔记云计算</h1>
         </header>
-        <div class="profile">
-            <img src="profile-pic.jpg" alt="Profile Picture">
-            <div class="info">
-                <h1>你的名字</h1>
-                <p>你的职业或头衔</p>
-                <p>你的简介或欢迎语</p>
-                <div class="social-links">
-                    <a href="#">Twitter</a>
-                    <a href="#">Facebook</a>
-                    <a href="#">LinkedIn</a>
-                    <!-- 根据需要添加其他社交媒体链接 -->
-                </div>
-            </div>
-        </div>
-        <footer>
-            &copy; 2024 个人主页 | 设计：你的名字
-        </footer>
+        <section class="company-info">
+            <h2>关于笔记云计算</h2>
+            <p>笔记云计算是一家专注于提供非营利性云服务计算的公司。我们致力于利用先进的云技术，为个人、企业和组织提供高效、安全、可靠的云解决方案。</p>
+            <p>我们的使命是通过技术创新，帮助客户实现数字化转型，提升业务效率，降低运营成本。</p>
+            <p>无论您是需要简单的云存储服务，还是复杂的数据分析和处理需求，笔记云计算都能为您提供量身定制的解决方案。</p>
+        </section>
+        <section class="contact-info">
+            <h2>联系信息</h2>
+            <p>如果您有任何疑问或需要进一步了解我们的服务，请随时联系我们：</p>
+            <p>电话: 15773678272</p>
+            <p>邮箱: <a href="mailto:szswsszsnb@qq.com">szswsszsnb@qq.com</a></p>
+            <p>位置: 美国洛杉矶</p>
+        </section>
     </div>
 </body>
 </html>
