@@ -81,7 +81,7 @@
             }
             currentCount++;
             document.getElementById('orderCount').textContent = currentCount;
-            Cookies.set('orderCount', currentCount, { expires: 365 });
+            Cookies.set('orderCount', currentCount.toString(), { expires: 365 }); // Update the cookie with the new count
         }
 
         function goToCheckout() {
