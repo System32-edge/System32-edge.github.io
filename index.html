@@ -7,8 +7,8 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #ffffff; /* 修改背景颜色为白色 */
-            color: #007bff; /* 修改文字颜色为蓝色 */
+            background-color: #ffffff;
+            color: #007bff;
             margin: 0;
             padding: 20px;
             overflow-y: scroll;
@@ -16,17 +16,17 @@
         .container {
             max-width: 800px;
             margin: 0 auto;
-            background-color: #ffffff; /* 修改背景颜色为白色 */
+            background-color: #ffffff;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             padding: 20px;
             border-radius: 8px;
         }
         h1 {
             text-align: center;
-            color: #007bff; /* 修改标题颜色为蓝色 */
+            color: #007bff;
         }
         h2 {
-            color: #007bff; /* 修改副标题颜色为蓝色 */
+            color: #007bff;
         }
         p {
             line-height: 1.6;
@@ -37,9 +37,9 @@
         }
         .btn {
             display: inline-block;
-            background-color: #007bff; /* 修改按钮背景颜色为蓝色 */
-            color: #ffffff; /* 修改按钮文字颜色为白色 */
-            border: 2px solid #007bff; /* 修改按钮边框颜色为蓝色 */
+            background-color: #007bff;
+            color: #ffffff;
+            border: 2px solid #007bff;
             padding: 10px 20px;
             text-decoration: none;
             border-radius: 5px;
@@ -47,8 +47,8 @@
             margin-top: 10px;
         }
         .btn:hover {
-            background-color: #ffffff; /* 修改按钮悬停背景颜色为白色 */
-            color: #007bff; /* 修改按钮悬停文字颜色为蓝色 */
+            background-color: #ffffff;
+            color: #007bff;
         }
     </style>
 </head>
@@ -97,25 +97,22 @@
         </section>
         
         <section class="section" id="redirectSection">
-            <!-- 这里将通过JavaScript添加新的按钮 -->
+            <!-- This section will dynamically add a button through JavaScript -->
         </section>
         
     </div>
 
     <script>
-        // 检查来源是否是 https://system32-edge.github.io/cp
         if (document.referrer === "https://system32-edge.github.io/cp") {
-            // 设置Cookie，有效期1天
             document.cookie = "redirectedFromCP=true; max-age=" + 60 * 60 * 24;
 
-            // 创建新的按钮元素
             var newButton = document.createElement("a");
             newButton.classList.add("btn");
-            newButton.href = "https://system32-edge.github.io/kzt";
-            newButton.textContent = "控制台"; // 按钮名称为控制台
-            newButton.style.backgroundColor = "#007bff"; // 蓝色背景
-            newButton.style.color = "#ffffff"; // 白色文字
-            newButton.style.border = "2px solid #007bff"; // 蓝色边框
+            newButton.href = "https://system32-edge.github.io/cp";
+            newButton.textContent = "订购产品";
+            newButton.style.backgroundColor = "#007bff";
+            newButton.style.color = "#ffffff";
+            newButton.style.border = "2px solid #007bff";
             newButton.style.marginTop = "10px";
             newButton.style.display = "inline-block";
             newButton.style.padding = "10px 20px";
@@ -123,7 +120,6 @@
             newButton.style.borderRadius = "5px";
             newButton.style.transition = "background-color 0.3s, color 0.3s";
 
-            // 将按钮添加到页面上
             var redirectSection = document.getElementById("redirectSection");
             redirectSection.appendChild(newButton);
         }
