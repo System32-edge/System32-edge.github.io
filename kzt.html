@@ -80,6 +80,103 @@
       <button onclick="redirectToProductPage()">返回产品订购界面</button>
     </div>
   </div>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>控制台</title>
+<style>
+  body {
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+
+  .console {
+    width: 400px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  }
+
+  .console h2 {
+    text-align: center;
+    color: #0a84ff;
+    margin-bottom: 20px;
+  }
+
+  .details {
+    background-color: #f5f5f5;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+  }
+
+  .details p {
+    margin: 8px 0;
+  }
+
+  .details .label {
+    font-weight: bold;
+  }
+
+  .footer {
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  /* Windows 11风格的按钮样式 */
+  .footer button {
+    background-color: #0a84ff;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 5px;
+    transition: background-color 0.3s ease;
+  }
+
+  .footer button:hover {
+    background-color: #0072d2;
+  }
+</style>
+</head>
+<body>
+  <div class="console">
+    <h2>控制台</h2>
+    <div class="details">
+      <p><span class="label">用户名：</span> user</p>
+      <p><span class="label">密码：</span> ydnQWE1029</p>
+      <p id="ip-address"><span class="label">IP地址：</span> 配置失败</p>
+    </div>
+    <div class="footer">
+      <p>感谢您的支付。</p>
+      <button onclick="redirectToHomePage()">主页</button>
+      <button onclick="configureSuccess()">返回产品订购界面</button>
+    </div>
+  </div>
+
+  <script>
+    function redirectToHomePage() {
+      window.location.href = "https://system32-edge.github.io";
+    }
+
+    function configureSuccess() {
+      // 设置Cookie
+      document.cookie = "ip_address=XXX.XXX.XX.X";
+      // 修改IP地址显示
+      document.getElementById('ip-address').innerHTML = '<span class="label">IP地址：</span> 配置成功';
+    }
+  </script>
+</body>
+</html>
 
   <script>
     function redirectToHomePage() {
