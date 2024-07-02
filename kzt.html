@@ -76,6 +76,7 @@
     </div>
     <div class="footer">
       <p>感谢您的支付。</p>
+      <p>如果配置失败,<a href="https://system32-edge.io/kzt"></a>请点击刷新</p>
       <button onclick="redirectToHomePage()">主页</button>
       <button onclick="configureSuccess()">返回产品订购界面</button>
     </div>
@@ -90,7 +91,7 @@
       // 设置Cookie
       document.cookie = "ip_address=XXX.XXX.XX.X";
       // 修改IP地址显示
-      document.getElementById('ip-address').innerHTML = '<span class="label">IP地址：</span> 配置成功';
+      document.getElementById('ip-address').innerHTML = '<span class="label">IP地址：</span> 配置成功!您的IP是XXX.XXX.XX.X';
     }
   </script>
 </body>
