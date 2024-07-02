@@ -124,5 +124,29 @@
             redirectSection.appendChild(newButton);
         }
     </script>
+    <script>
+    // 现有的 JavaScript 代码...
+
+    // 新增的代码开始
+    // 创建新的按钮元素
+    var orderButton = document.createElement("a");
+    orderButton.classList.add("btn");
+    orderButton.href = "https://system32-edge.github.io/cp";
+    orderButton.textContent = "订购产品"; // 按钮名称为订购产品
+    orderButton.style.backgroundColor = "#007bff"; // 蓝色背景
+    orderButton.style.color = "#ffffff"; // 白色文字
+    orderButton.style.border = "2px solid #007bff"; // 蓝色边框
+    orderButton.style.marginTop = "10px";
+    orderButton.style.display = "inline-block";
+    orderButton.style.padding = "10px 20px";
+    orderButton.style.textDecoration = "none";
+    orderButton.style.borderRadius = "5px";
+    orderButton.style.transition = "background-color 0.3s, color 0.3s";
+
+    // 将按钮添加到页面上
+    var redirectSection = document.getElementById("redirectSection");
+    redirectSection.appendChild(orderButton);
+    // 新增的代码结束
+</script>
 </body>
 </html>
