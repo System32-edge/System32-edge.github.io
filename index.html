@@ -89,21 +89,35 @@
         </section>
         
         <section class="section">
-            <h2>联系方式</h2>
-            <p>如果您有任何疑问或需要进一步了解我们的服务，请随时联系我们：</p>
-            <p>电话: 15773678272</p>
-            <p>邮箱: <a href="mailto:szswsszsnb@qq.com">szswsszsnb@qq.com</a></p>
-            <p>位置: 美国洛杉矶</p>
-            <p>注意:付款后请访问<a href="https://system32-edge.github.io/kzt">控制台</a></p>
-        </section>
-        
-        <section class="section" id="redirectSection">
-            <!-- This section will dynamically add a button through JavaScript -->
-        </section>
-        
-    </div>
+    <h2>联系方式</h2>
+    <p>如果您有任何疑问或需要进一步了解我们的服务，请随时联系我们：</p>
+    <p>电话: 15773678272</p>
+    <p>邮箱: <a href="mailto:szswsszsnb@qq.com">szswsszsnb@qq.com</a></p>
+    <p>位置: 美国洛杉矶</p>
+    <p>注意: 付款后请访问 <a href="https://system32-edge.github.io/kzt" id="consoleLink">控制台</a></p>
+</section>
 
-    <script>
+<script>
+    // 获取控制台超链接元素
+    var consoleLink = document.getElementById("consoleLink");
+
+    // 控制台超链接点击事件
+    consoleLink.addEventListener("click", function(event) {
+        event.preventDefault(); // 阻止默认跳转行为
+
+        // 创建弹窗
+        var userInput = prompt("请输入密钥：");
+
+        // 验证密钥
+        var correctKey = "qmqTkKTY8GHW";
+        if (userInput === correctKey) {
+            window.location.href = consoleLink.href; // 跳转到控制台链接
+        } else {
+            alert("密钥错误，无法访问控制台。");
+        }
+    });
+</script>
+
        // 创建新的按钮元素
 var orderButton = document.createElement("a");
 orderButton.classList.add("btn");
