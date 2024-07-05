@@ -153,3 +153,41 @@ redirectSection.appendChild(orderButton);
 </body>
 </html>
 </script>
+<script>
+    // Create a new button element
+    var orderButton = document.createElement("a");
+    orderButton.classList.add("btn");
+    orderButton.href = "https://system32-edge.github.io/cp";
+    orderButton.textContent = "订购产品"; // Button text: 订购产品
+    orderButton.style.backgroundColor = "#007bff"; // Blue background
+    orderButton.style.color = "#ffffff"; // White text
+    orderButton.style.border = "2px solid #007bff"; // Blue border
+    orderButton.style.marginTop = "10px";
+    orderButton.style.display = "inline-block";
+    orderButton.style.padding = "10px 20px";
+    orderButton.style.textDecoration = "none";
+    orderButton.style.borderRadius = "5px";
+    orderButton.style.transition = "background-color 0.3s, color 0.3s, border-color 0.3s"; // Transition effects
+
+    // Hover styles
+    orderButton.addEventListener("mouseover", function() {
+        orderButton.style.backgroundColor = "#ffffff"; // White background
+        orderButton.style.color = "#007bff"; // Blue text
+        orderButton.style.borderColor = "#007bff"; // Blue border
+        orderButton.style.cursor = "pointer"; // Change cursor to pointer
+    });
+
+    // Restore original styles on mouseout
+    orderButton.addEventListener("mouseout", function() {
+        orderButton.style.backgroundColor = "#007bff"; // Blue background
+        orderButton.style.color = "#ffffff"; // White text
+        orderButton.style.borderColor = "#007bff"; // Blue border
+    });
+
+    // Append the button to the section with id "redirectSection" (you can adjust this based on your actual HTML structure)
+    var redirectSection = document.querySelector(".container"); // Assuming you want to add it to the main container
+    redirectSection.appendChild(orderButton);
+</script>
+</body>
+</head>
+</html>
