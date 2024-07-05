@@ -116,4 +116,40 @@ function promptForKey() {
     return false; // 阻止默认的超链接跳转行为
 }
 </script>
-    <button class="btn" onclick="location.href="https://system32-edge.github.io/cp">订购产品</button>
+<script>
+    // 创建新的按钮元素
+var orderButton = document.createElement("a");
+orderButton.classList.add("btn");
+orderButton.href = "https://system32-edge.github.io/cp";
+orderButton.textContent = "订购产品"; // 按钮名称为订购产品
+orderButton.style.backgroundColor = "#007bff"; // 蓝色背景
+orderButton.style.color = "#ffffff"; // 白色文字
+orderButton.style.border = "2px solid #007bff"; // 蓝色边框
+orderButton.style.marginTop = "10px";
+orderButton.style.display = "inline-block";
+orderButton.style.padding = "10px 20px";
+orderButton.style.textDecoration = "none";
+orderButton.style.borderRadius = "5px";
+orderButton.style.transition = "background-color 0.3s, color 0.3s, border-color 0.3s"; // 添加border-color的过渡效果
+
+// hover时的样式
+orderButton.addEventListener("mouseover", function() {
+    orderButton.style.backgroundColor = "#ffffff"; // 白色背景
+    orderButton.style.color = "#007bff"; // 蓝色文字
+    orderButton.style.borderColor = "#007bff"; // 蓝色边框
+});
+
+// 鼠标离开时恢复原始样式
+orderButton.addEventListener("mouseout", function() {
+    orderButton.style.backgroundColor = "#007bff"; // 蓝色背景
+    orderButton.style.color = "#ffffff"; // 白色文字
+    orderButton.style.borderColor = "#007bff"; // 蓝色边框
+});
+
+// 将按钮添加到页面上
+var redirectSection = document.getElementById("redirectSection");
+redirectSection.appendChild(orderButton);
+    </script>
+</body>
+</html>
+</script>
