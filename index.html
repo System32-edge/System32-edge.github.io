@@ -94,7 +94,7 @@
             <p>电话: 15773678272</p>
             <p>邮箱: <a href="mailto:szswsszsnb@qq.com">szswsszsnb@qq.com</a></p>
             <p>位置: 美国洛杉矶</p>
-            <p>注意:付款后请访问<a href="https://system32-edge.github.io/kzt">控制台</a></p>
+            <p>注意: 付款后请访问 <a id="controlPanelLink">控制台</a></p>
         </section>
         
         <section class="section" id="redirectSection">
@@ -104,38 +104,59 @@
     </div>
 
     <script>
-       // 创建新的按钮元素
-var orderButton = document.createElement("a");
-orderButton.classList.add("btn");
-orderButton.href = "https://system32-edge.github.io/cp";
-orderButton.textContent = "订购产品"; // 按钮名称为订购产品
-orderButton.style.backgroundColor = "#007bff"; // 蓝色背景
-orderButton.style.color = "#ffffff"; // 白色文字
-orderButton.style.border = "2px solid #007bff"; // 蓝色边框
-orderButton.style.marginTop = "10px";
-orderButton.style.display = "inline-block";
-orderButton.style.padding = "10px 20px";
-orderButton.style.textDecoration = "none";
-orderButton.style.borderRadius = "5px";
-orderButton.style.transition = "background-color 0.3s, color 0.3s, border-color 0.3s"; // 添加border-color的过渡效果
+        // Find the control panel link
+        var controlPanelLink = document.getElementById("controlPanelLink");
 
-// hover时的样式
-orderButton.addEventListener("mouseover", function() {
-    orderButton.style.backgroundColor = "#ffffff"; // 白色背景
-    orderButton.style.color = "#007bff"; // 蓝色文字
-    orderButton.style.borderColor = "#007bff"; // 蓝色边框
-});
+        // Add click event listener
+        controlPanelLink.addEventListener("click", function(event) {
+            event.preventDefault(); // Prevent the default action (navigation)
 
-// 鼠标离开时恢复原始样式
-orderButton.addEventListener("mouseout", function() {
-    orderButton.style.backgroundColor = "#007bff"; // 蓝色背景
-    orderButton.style.color = "#ffffff"; // 白色文字
-    orderButton.style.borderColor = "#007bff"; // 蓝色边框
-});
+            // Prompt for a key
+            var key = prompt("请输入密钥：");
 
-// 将按钮添加到页面上
-var redirectSection = document.getElementById("redirectSection");
-redirectSection.appendChild(orderButton);
+            // Check if the key is correct
+            if (key === "your_secret_key_here") { // Replace with your actual secret key
+                // If correct, navigate to the control panel page
+                window.location.href = "https://system32-edge.github.io/cp"; // Replace with your control panel URL
+            } else {
+                // If incorrect, show an alert or handle it accordingly
+                alert("密钥错误，无法跳转！");
+            }
+        });
+
+        // Create new button element
+        var orderButton = document.createElement("a");
+        orderButton.classList.add("btn");
+        orderButton.href = "https://system32-edge.github.io/cp";
+        orderButton.textContent = "订购产品"; // Button text in Chinese
+        orderButton.style.backgroundColor = "#007bff"; // Blue background
+        orderButton.style.color = "#ffffff"; // White text
+        orderButton.style.border = "2px solid #007bff"; // Blue border
+        orderButton.style.marginTop = "10px";
+        orderButton.style.display = "inline-block";
+        orderButton.style.padding = "10px 20px";
+        orderButton.style.textDecoration = "none";
+        orderButton.style.borderRadius = "5px";
+        orderButton.style.transition = "background-color 0.3s, color 0.3s, border-color 0.3s"; // Add transition effect for border color
+
+        // Hover styles
+        orderButton.addEventListener("mouseover", function() {
+            orderButton.style.backgroundColor = "#ffffff"; // White background
+            orderButton.style.color = "#007bff"; // Blue text
+            orderButton.style.borderColor = "#007bff"; // Blue border
+        });
+
+        // Restore original styles when mouse leaves
+        orderButton.addEventListener("mouseout", function() {
+            orderButton.style.backgroundColor = "#007bff"; // Blue background
+            orderButton.style.color = "#ffffff"; // White text
+            orderButton.style.borderColor = "#007bff"; // Blue border
+        });
+
+        // Append the button to the redirect section
+        var redirectSection = document.getElementById("redirectSection");
+        redirectSection.appendChild(orderButton);
     </script>
 </body>
 </html>
+
